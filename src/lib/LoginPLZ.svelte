@@ -13,7 +13,7 @@
   {:then user}
     {#if user.error == "E_BAD_SESSION_TOKEN"}
       <p>You are not logged in</p>
-      <a href="/api/auth">Sign in with Discord</a>
+      <a rel="external" href="/api/auth">Sign in with Discord</a>
     {:else}
   	 <slot></slot>
     {/if}
