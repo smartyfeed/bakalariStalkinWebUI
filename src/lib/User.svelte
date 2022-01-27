@@ -4,14 +4,28 @@
 </script>
 
 <style>
+  .container {
+    height: 100%;
+  }
 
+  .avatar {
+    height: 100%;
+    display: inline-block;
+    border-radius: 50%;
+  }
+
+  .username {
+    display: inline-block;
+    vertical-align: top;
+  }
 </style>
 
-<div>
+<div class="container">
   {#await userPromise}
   	<p>loading</p>
   {:then user}
-  	<p>{user.username}</p>
+    <img src="https://cdn.discordapp.com/avatars/{user.id}/{user.avatar}.png?size=256" class="avatar" />
+  	<p class="username">{user.username}</p>
   {:catch error}
   	<p style="color: red">{error.message}</p>
   {/await}
