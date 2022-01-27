@@ -1,5 +1,5 @@
 <script>
-  import { get } from  "../global.js";
+  import { get } from  "$lib/global.js";
   var userPromise = get("/user");
 </script>
 

@@ -1,5 +1,8 @@
 <script>
-  import User from "./User.svelte";
+  import User from "$lib/User.svelte";
+  import LoginPLZ from "$lib/LoginPLZ.svelte";
 </script>
 
-<User />
+<LoginPLZ>
+  <User />
+</LoginPLZ>
