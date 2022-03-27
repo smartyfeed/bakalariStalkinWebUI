@@ -6,9 +6,8 @@
 <style>
   .header {
     background: var(--background-dark);
-    height: 3em;
+    height: 4em;
     width: 100%;
-    padding: 0.5em;
   }
 
   .content {

@@ -6,16 +6,18 @@
 <style>
   .container {
     height: 100%;
+    padding: 0.5em;
   }
 
   .avatar {
-    height: 100%;
+    height: 3em;
     display: inline-block;
     border-radius: 50%;
   }
 
   .username {
     display: inline-block;
+    padding-left: 0.5em;
     vertical-align: top;
   }
 </style>
