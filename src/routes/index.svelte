@@ -1,5 +1,5 @@
 <script>
-  import User from "$lib/User.svelte";
+  import SubscriptionsList from "$lib/SubscriptionsList.svelte";
 </script>
 
-probably overview and links here?
+<SubscriptionsList />
