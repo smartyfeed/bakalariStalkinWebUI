@@ -1,13 +1,20 @@
-import adapter from '@sveltejs/adapter-static';
-
-/** @type {import('@sveltejs/kit').Config} */
+import adapter from "@sveltejs/adapter-static";
+import preprocess from "svelte-preprocess";
+/**
+ * This will add autocompletion if you're working with SvelteKit
+ *
+ * @type {import('@sveltejs/kit').Config}
+ */
 const config = {
-	kit: {
-		adapter: adapter(),
-
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
-	}
+  preprocess: preprocess({
+    scss: {
+      prependData: `@import 'static/custom.scss';`,
+    },
+  }),
+  kit: {
+    adapter: adapter(),
+    target: "#svelte",
+  },
 };
 
 export default config;

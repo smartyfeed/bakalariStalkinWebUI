@@ -1,0 +1,42 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+.user {
+  font-size: 1.1em !important;
+}
+
+@include media-breakpoint-down(lg) {
+  .user {
+    margin-left: -0.5em;
+    margin-top: 0.5em;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .user {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+    right: 0 !important;
+    position: absolute !important;
+  }
+}
+
+.btn-discord {
+  background-color: #7289da;
+  color: #fff;
+  border-color: #7289da;
+  display: flex;
+  gap: 0.5em;
+  max-width: 12.5rem;
+  &:hover {
+    background-color: #5f73bc;
+    border-color: #5f73bc;
+  }
+
+  i {
+    font-size: 1em;
+  }
+}
+
+.content {
+  padding: 1em;
+}
