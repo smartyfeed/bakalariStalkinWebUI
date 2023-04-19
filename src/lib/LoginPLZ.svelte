@@ -10,20 +10,6 @@
   userPromise.then(user => darkCenter = !!user.error);
 </script>
 
-<style>
-  img {
-    height: 1em;
-    padding: .5em;
-    vertical-align: bottom;
-  }
-
-  .sign-in-text {
-    vertical-align: top;
-    padding-top: .5em;
-    display: inline-block;
-  }
-</style>
-
 <div class="loginPlz">
   {#await userPromise}
   	<p>loading</p>
@@ -32,7 +18,9 @@
     <div class="header">
   	  <Navbar/>
     </div>
+    <div class="container pt-3">
       <p class="highlight">You are not logged in.</p>
+    </div>
     {:else}
     <div class="header">
   	     <Navbar/>
