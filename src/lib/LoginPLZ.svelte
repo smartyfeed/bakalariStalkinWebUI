@@ -10,7 +10,6 @@
   userPromise.then(user => darkCenter = !!user.error);
 </script>
 
-<div class="loginPlz">
   {#await userPromise}
   	<p>loading</p>
   {:then user}
@@ -25,7 +24,7 @@
     <div class="header">
   	     <Navbar/>
     </div>
-      <div class="content">
+      <div class="container content">
   	     <slot></slot>
        </div>
     {/if}
@@ -33,4 +32,3 @@
   	<p style="color: red">Error:</p>
   	<p style="color: red">{error.message}</p>
   {/await}
-</div>
