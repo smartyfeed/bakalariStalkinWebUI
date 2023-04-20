@@ -1,0 +1,12 @@
+:root {
+  --blurple: #5865F2;
+}
+
+.content {
+  padding: 1em 0;
+  display: flex;
+}
+
+.content * {
+  flex-grow: 1;
+}
