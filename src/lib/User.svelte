@@ -1,6 +1,7 @@
 <script>
   import { get, apiBase } from  "$lib/global.js";
   var userPromise = get("/user");
+  var settingsPromise = get("/settings");
 </script>
 <style>
 @media (max-width: 1199.98px) {
@@ -42,4 +43,8 @@
       {/if}
   {:catch error}
   	<p style="color: red">{error.message}</p>
+  {/await}
+
+  <!-- svelte-ignore empty-block -->
+  {#await settingsPromise}
   {/await}
