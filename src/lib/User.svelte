@@ -2,6 +2,30 @@
   import { get, apiBase } from  "$lib/global.js";
   var userPromise = get("/user");
 </script>
+<style>
+@media (max-width: 1199.98px) {
+  .btn-discord {
+    margin-left: 0.5em;
+  }
+}
+
+.btn-discord {
+  background-color: var(--blurple);
+  color: #fff;
+  display: flex;
+  gap: 0.5em;
+  max-width: 12.5rem;
+}
+
+.btn-discord:hover {
+  background-color: #4953bd;
+  color: #fff !important;
+}
+.btn-discord i {
+  font-size: 1em;
+}
+</style>
+
   {#await userPromise}
   	<p>loading</p>
   {:then user}

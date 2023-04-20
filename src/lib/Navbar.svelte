@@ -15,9 +15,6 @@
     margin-left: -0.5em;
     margin-top: 0.5em;
   }
-  .btn-discord {
-    margin-left: 0.5em;
-  }
 }
 @media (min-width: 992px) {
   .user {
@@ -26,22 +23,6 @@
     right: 0 !important;
     position: absolute !important;
   }
-}
-
-.btn-discord {
-  background-color: var(--blurple);
-  color: #fff;
-  display: flex;
-  gap: 0.5em;
-  max-width: 12.5rem;
-}
-
-.btn-discord:hover {
-  background-color: #4953bd;
-  color: #fff !important;
-}
-.btn-discord i {
-  font-size: 1em;
 }
 </style>
 
@@ -54,7 +35,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" class:active={$page.url.pathname==='/'} sveltekit:prefetch href="/">Dashboard</a>
+          <a class="nav-link" class:active={$page.url.pathname==='/'} href="/">Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://absence.smartyfeed.me" target="_blank">Absence</a>
