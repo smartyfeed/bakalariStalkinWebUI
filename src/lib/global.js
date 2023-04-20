@@ -8,7 +8,7 @@ if (dev && browser) var token = location.hash.slice(1);
 
 export const get = async function (url, options = {}, json = true) {
   if (url.startsWith("/")) url = apiBase + url;
-
+  
   if (dev && browser) options.token = token;
 
   var params = new URLSearchParams(options);
@@ -17,4 +17,28 @@ export const get = async function (url, options = {}, json = true) {
   var response = await fetch(url);
   if (json) return await response.json();
   return response.text();
+};
+
+export const post = async function (url, body, options = {}, json = true) {
+  if (url.startsWith("/")) url = apiBase + url;
+
+  var object = {};
+  body.forEach((value, key) => object[key] = value);
+  
+  options.token = object.token;
+
+  var params = new URLSearchParams(options);
+  url += "?" + params.toString();
+
+  var response = await fetch(url, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(object)
+    })
+
+  if (json) return await response.json();
+  return response;
 };
