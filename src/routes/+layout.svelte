@@ -7,7 +7,7 @@
 </style>
 
 <LoginPLZ>
-  <div>
+  <div class="container">
     <slot></slot>
   </div>
 </LoginPLZ>
