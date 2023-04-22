@@ -10,7 +10,6 @@ export const get = async function (url, options = {}, json = true) {
   if (url.startsWith("/")) url = apiBase + url;
   
   if (dev && browser) options.token = token;
-
   var params = new URLSearchParams(options);
   url += "?" + params.toString();
 
@@ -23,9 +22,21 @@ export const post = async function (url, body, options = {}, json = true) {
   if (url.startsWith("/")) url = apiBase + url;
 
   var object = {};
-  body.forEach((value, key) => object[key] = value);
-  
-  options.token = object.token;
+
+  if (body instanceof FormData) {
+    body.forEach((value, key) => {
+      if(!Reflect.has(object, key)){
+          object[key] = value;
+          return;
+      }
+      if(!Array.isArray(object[key])){
+          object[key] = [object[key]];    
+      }
+      object[key].push(value);
+  });
+  } else {
+    object = body;
+  }
 
   var params = new URLSearchParams(options);
   url += "?" + params.toString();
