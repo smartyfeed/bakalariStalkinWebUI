@@ -10,3 +10,15 @@
 .content * {
   flex-grow: 1;
 }
+
+@media (max-width: 1199.98px) {
+  .half-width {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .half-width {
+    width: 50%;
+  }
+}
