@@ -2,7 +2,7 @@
 // @ts-nocheck
 	import { TempusDominus } from '@eonasdan/tempus-dominus';
 	import { onMount } from 'svelte';
-  
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 
@@ -31,12 +31,6 @@
 		});
 	});
 </script>
-
-<link
-	rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.7.7/dist/css/tempus-dominus.min.css"
-	crossorigin="anonymous"
-/>
 
 <div class="container half-width">
 	{#if data.sub?.id}
