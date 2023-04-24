@@ -21,7 +21,7 @@
 						<th scope="col">Class</th>
 						<th scope="col">Groups</th>
 						<th scope="col">Paused until</th>
-            <th scope="col">On class start</th>
+						<th scope="col">On class start</th>
 						<th scope="col">Actions</th>
 					</tr>
 				</thead>
@@ -36,27 +36,31 @@
 									? new Date(sub.pausedUntil).toLocaleString()
 									: ''}</td
 							>
-              <td label="On class start">{sub.notificationOnClassStart == 1 ? "Yes" : "No"}</td>
+							<td label="On class start">{sub.notificationOnClassStart == 1 ? 'Yes' : 'No'}</td>
 							<td label="Actions" class="actions">
-								<a href="/sub/{sub.id}" class="btn btn-primary">Edit</a>
-								<a href="/pause/{sub.id}" class="btn btn-outline-warning">Pause</a>
-                {#if sub.pausedUntil > Date.now()}
-                <a href="/unpause/{sub.id}" class="btn btn-outline-secondary">Unpause</a>
-                {/if}
+								<div class="actions">
+									<a href="/sub/{sub.id}" class="btn btn-primary">Edit</a>
+									<a href="/pause/{sub.id}" class="btn btn-outline-warning">Pause</a>
+									{#if sub.pausedUntil > Date.now()}
+										<a href="/unpause/{sub.id}" class="btn btn-outline-secondary">Unpause</a>
+									{/if}
+								</div>
 							</td>
 						</tr>
 					{/each}
 				</tbody>
 			</table>
 
-			<a href="sub/new/" class="btn btn-primary">Add new subscription</a>
-
-			{#if list.length > 1}
+      <div class="lower-nav">
+        <a href="sub/new/" class="btn btn-primary">Add new subscription</a>
+        
+        {#if list.length > 1}
 				<a href="pause/all" class="btn btn-outline-warning">Pause all</a>
-			{/if}
-      {#if list.filter(sub => sub.pausedUntil > Date.now()).length > 1}
-        <a href="unpause/all" class="btn btn-outline-secondary">Unpause all</a>
-      {/if}
+        {/if}
+        {#if list.filter((sub) => sub.pausedUntil > Date.now()).length > 1}
+				<a href="unpause/all" class="btn btn-outline-secondary">Unpause all</a>
+        {/if}
+      </div>
 		{/if}
 	{:catch error}
 		<p style="color: red">{error.message}</p>
@@ -64,6 +68,17 @@
 </div>
 
 <style>
+	.actions {
+		display: flex;
+		gap: 0.5em;
+		margin: auto;
+	}
+
+  .lower-nav {
+    display: flex;
+    gap: 0.5em;
+  }
+
 	@media screen and (max-width: 600px) {
 		table thead {
 			display: none;
@@ -80,8 +95,11 @@
 		}
 
 		.actions {
-			display: flex;
-			gap: 0.5em;
+			margin: 0;
 		}
+
+    .actions a:first-child {
+      margin-left: -0.5em
+    }
 	}
 </style>
