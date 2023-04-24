@@ -12,7 +12,7 @@
 			class="form-control"
 			id="bakaServer"
 			name="bakaServer"
-			value={data.settings?.bakaServer ?? ''}
+			value={data.settings.bakaServer ?? ''}
 			disabled
 		/>
 	</div>
@@ -23,7 +23,7 @@
 			class="form-control"
 			id="className"
 			name="className"
-			value={data.settings?.className ?? ''}
+			value={data.settings.className ?? ''}
 			disabled
 		/>
 	</div>
@@ -34,7 +34,7 @@
 			class="form-control"
 			id="groups"
 			name="groups"
-			value={data.settings?.groups.join(', ')}
+			value={data.settings.groups.join(', ') ?? ""}
 			disabled
 		/>
 	</div>
