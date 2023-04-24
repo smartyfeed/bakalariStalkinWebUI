@@ -34,7 +34,7 @@
 			class="form-control"
 			id="groups"
 			name="groups"
-			value={data.settings.groups.join(', ') ?? ""}
+			value={data.settings.groups?.join(', ') ?? ""}
 			disabled
 		/>
 	</div>
