@@ -19,15 +19,10 @@
 	<form
 		method="POST"
 		use:enhance={({ form, data, action, cancel, submitter }) => {
-			console.log(data);
-			console.log(form);
-			console.log(action);
-			console.log(submitter);
 			if (submitter.id == 'back') {
 				data.set('step', (parseInt(data.get('step')) - 2).toString());
 			}
 			return async ({ result, update }) => {
-				console.log(result);
 				update({ reset: false });
 			};
 		}}
