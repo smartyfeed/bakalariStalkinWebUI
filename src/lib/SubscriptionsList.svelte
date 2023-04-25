@@ -41,7 +41,7 @@
 								<div class="actions">
 									<a href="/sub/{sub.id}" class="btn btn-primary">Edit</a>
 									<a href="/pause/{sub.id}" class="btn btn-outline-warning"
-										>Pause{sub.pausedUntil > Date.now() ? 'Prolong' : 'Pause'}</a
+										>{sub.pausedUntil > Date.now() ? 'Prolong' : 'Pause'}</a
 									>
 									{#if sub.pausedUntil > Date.now()}
 										<a href="/unpause/{sub.id}" class="btn btn-outline-secondary">Unpause</a>
