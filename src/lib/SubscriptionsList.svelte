@@ -40,7 +40,9 @@
 							<td label="Actions" class="actions">
 								<div class="actions">
 									<a href="/sub/{sub.id}" class="btn btn-primary">Edit</a>
-									<a href="/pause/{sub.id}" class="btn btn-outline-warning">Pause</a>
+									<a href="/pause/{sub.id}" class="btn btn-outline-warning"
+										>Pause{sub.pausedUntil > Date.now() ? 'Prolong' : 'Pause'}</a
+									>
 									{#if sub.pausedUntil > Date.now()}
 										<a href="/unpause/{sub.id}" class="btn btn-outline-secondary">Unpause</a>
 									{/if}
@@ -51,16 +53,16 @@
 				</tbody>
 			</table>
 
-      <div class="lower-nav">
-        <a href="sub/new/" class="btn btn-primary">Add new subscription</a>
-        
-        {#if list.length > 1}
-				<a href="pause/all" class="btn btn-outline-warning">Pause all</a>
-        {/if}
-        {#if list.filter((sub) => sub.pausedUntil > Date.now()).length > 1}
-				<a href="unpause/all" class="btn btn-outline-secondary">Unpause all</a>
-        {/if}
-      </div>
+			<div class="lower-nav">
+				<a href="sub/new/" class="btn btn-primary">Add new subscription</a>
+
+				{#if list.length > 1}
+					<a href="pause/all" class="btn btn-outline-warning">Pause all</a>
+				{/if}
+				{#if list.filter((sub) => sub.pausedUntil > Date.now()).length > 1}
+					<a href="unpause/all" class="btn btn-outline-secondary">Unpause all</a>
+				{/if}
+			</div>
 		{/if}
 	{:catch error}
 		<p style="color: red">{error.message}</p>
@@ -74,10 +76,10 @@
 		margin: auto;
 	}
 
-  .lower-nav {
-    display: flex;
-    gap: 0.5em;
-  }
+	.lower-nav {
+		display: flex;
+		gap: 0.5em;
+	}
 
 	@media screen and (max-width: 600px) {
 		table thead {
@@ -98,8 +100,8 @@
 			margin: 0;
 		}
 
-    .actions a:first-child {
-      margin-left: -0.5em
-    }
+		.actions a:first-child {
+			margin-left: -0.5em;
+		}
 	}
 </style>
