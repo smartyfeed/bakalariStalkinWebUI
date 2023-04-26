@@ -35,7 +35,7 @@
 				class={form?.step > 1 ? 'form-control-plaintext fw-bold' : 'form-control'}
 				id="bakaServer"
 				name="bakaServer"
-				value={form?.bakaServer ?? ''}
+				value={form?.bakaServer ?? 'https://is.sssvt.cz/IS/Timetable/Public'}
 				readonly={form?.step > 1}
 				required
 				tabindex="-1"

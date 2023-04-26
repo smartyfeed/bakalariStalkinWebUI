@@ -1,17 +1,21 @@
-import { post } from '$lib/global';
+import { post, get } from '$lib/global';
 import { redirect } from '@sveltejs/kit';
 
 export async function load({ cookies, params }) {
+	let defaults = await get('/settings', { token: cookies.get('token') }); 
+
 	if (params.id && params.id != 'new') {
 		let body = { id: params.id };
 		let res = await post(`/sub`, body, { token: cookies.get('token') }, false);
 		if (res.status != 200) {
 			throw redirect(301, '/');
 		}
-		return await res.json();
+		let response = await res.json();
+		response = {...response, ...defaults};
+		return response;
 	}
 
-  return {};
+  return defaults;
 }
 
 /** @type {import('./$types').Actions} */

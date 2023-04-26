@@ -6,6 +6,7 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
+
 </script>
 
 <div class="container half-width">
@@ -43,7 +44,7 @@
 				class={form?.step > 1 ? 'form-control-plaintext fw-bold' : 'form-control'}
 				id="bakaServer"
 				name="bakaServer"
-				value={form?.bakaServer ?? data.sub?.bakaServer ?? ''}
+				value={form?.bakaServer ?? data.sub?.bakaServer ?? data.settings?.bakaServer ?? 'https://is.sssvt.cz/IS/Timetable/Public'}
 				readonly={form?.step > 1}
 				required
 				tabindex="-1"
@@ -63,7 +64,7 @@
 					{#each form?.classes as className}
 						<option
 							value={className.name}
-							selected={className.name == (form?.className ?? data.sub?.className)}
+							selected={className.name == (form?.className ?? data.sub?.className ?? data.settings?.className)}
 						>
 							{className.name}
 						</option>
