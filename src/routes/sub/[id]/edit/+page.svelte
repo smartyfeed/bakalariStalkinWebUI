@@ -6,7 +6,6 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-
 </script>
 
 <div class="container half-width">
@@ -23,6 +22,7 @@
 		<h3>Edit subscription - {data.sub?.label}</h3>
 	{:else}
 		<h3>Create new subscription</h3>
+		<div class="alert alert-dark" role="alert">Your defaults will be pre-filled</div>
 	{/if}
 	<form
 		method="POST"
@@ -44,7 +44,10 @@
 				class={form?.step > 1 ? 'form-control-plaintext fw-bold' : 'form-control'}
 				id="bakaServer"
 				name="bakaServer"
-				value={form?.bakaServer ?? data.sub?.bakaServer ?? data.settings?.bakaServer ?? 'https://is.sssvt.cz/IS/Timetable/Public'}
+				value={form?.bakaServer ??
+					data.sub?.bakaServer ??
+					data.settings?.bakaServer ??
+					'https://is.sssvt.cz/IS/Timetable/Public'}
 				readonly={form?.step > 1}
 				required
 				tabindex="-1"
@@ -64,7 +67,8 @@
 					{#each form?.classes as className}
 						<option
 							value={className.name}
-							selected={className.name == (form?.className ?? data.sub?.className ?? data.settings?.className)}
+							selected={className.name ==
+								(form?.className ?? data.sub?.className ?? data.settings?.className)}
 						>
 							{className.name}
 						</option>
@@ -115,7 +119,7 @@
 					type="checkbox"
 					value=""
 					id="notificationOnClassStart"
-          name="notificationOnClassStart"
+					name="notificationOnClassStart"
 					checked={data.sub?.notificationOnClassStart == 1}
 				/>
 				<label class="form-check-label" for="notificationOnClassStart">
