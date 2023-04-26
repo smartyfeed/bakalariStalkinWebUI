@@ -7,44 +7,44 @@
 
 <div class="SubscriptionList">
 	{#await listPromise}
-		<p>loading</p>
+		<p>načítání</p>
 	{:then list}
 		{#if list.length == 0}
-			<h3>Active Subscriptions</h3>
-			You have no subscriptions!
+			<h3>Aktivní odběry</h3>
+			Nemáte žádné odběry!
 		{:else}
-			<h3>Active Subscriptions</h3>
+			<h3>Aktivní odběry</h3>
 			<table class="table table-striped table-hover table-bordered border-light-subtle">
 				<thead>
 					<tr>
-						<th scope="col">Label</th>
-						<th scope="col">Class</th>
-						<th scope="col">Groups</th>
-						<th scope="col">Paused until</th>
-						<th scope="col">On class start</th>
-						<th scope="col">Actions</th>
+						<th scope="col">Štítek</th>
+						<th scope="col">Třída</th>
+						<th scope="col">Skupiny</th>
+						<th scope="col">Pozastaveno do</th>
+						<th scope="col">Na začátku hodiny</th>
+						<th scope="col">Akce</th>
 					</tr>
 				</thead>
 				<tbody>
 					{#each list as sub}
 						<tr>
-							<td label="Label">{sub.label}</td>
-							<td label="Class">{sub.className}</td>
-							<td label="Groups">{JSON.parse(sub.groups).join(', ')}</td>
-							<td label="Paused until"
+							<td label="Štítek">{sub.label}</td>
+							<td label="Třída">{sub.className}</td>
+							<td label="Skupiny">{JSON.parse(sub.groups).join(', ')}</td>
+							<td label="Pozastaveno do"
 								>{sub.pausedUntil > Date.now()
 									? new Date(sub.pausedUntil).toLocaleString()
 									: ''}</td
 							>
-							<td label="On class start">{sub.notificationOnClassStart == 1 ? 'Yes' : 'No'}</td>
-							<td label="Actions" class="actions">
+							<td label="Na začátku hodiny">{sub.notificationOnClassStart == 1 ? 'Ano' : 'Ne'}</td>
+							<td label="Akce" class="actions">
 								<div class="actions">
-									<a href="/sub/{sub.id}" class="btn btn-primary">Edit</a>
+									<a href="/sub/{sub.id}" class="btn btn-primary">Upravit</a>
 									<a href="/pause/{sub.id}" class="btn btn-outline-warning"
-										>{sub.pausedUntil > Date.now() ? 'Prolong' : 'Pause'}</a
+										>{sub.pausedUntil > Date.now() ? 'Prodloužit' : 'Pozastavit'}</a
 									>
 									{#if sub.pausedUntil > Date.now()}
-										<a href="/unpause/{sub.id}" class="btn btn-outline-secondary" data-sveltekit-reload>Unpause</a>
+										<a href="/unpause/{sub.id}" class="btn btn-outline-secondary" data-sveltekit-reload>Obnovit</a>
 									{/if}
 								</div>
 							</td>
@@ -54,13 +54,13 @@
 			</table>
 
 			<div class="lower-nav">
-				<a href="sub/new/" class="btn btn-primary">Add new subscription</a>
+				<a href="sub/new/" class="btn btn-primary">Přidat nový odběr</a>
 
 				{#if list.length > 1}
-					<a href="pause/all" class="btn btn-outline-warning">Pause all</a>
+					<a href="pause/all" class="btn btn-outline-warning">Pozastavit vše</a>
 				{/if}
 				{#if list.filter((sub) => sub.pausedUntil > Date.now()).length > 1}
-					<a href="unpause/all" class="btn btn-outline-secondary">Unpause all</a>
+					<a href="unpause/all" class="btn btn-outline-secondary">Obnovit vše</a>
 				{/if}
 			</div>
 		{/if}

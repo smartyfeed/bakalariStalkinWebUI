@@ -18,7 +18,7 @@
   	  <Navbar/>
     </div>
     <div class="container pt-3">
-      <p class="highlight">You are not logged in.</p>
+      <p class="highlight">Nejste přihlášeni.</p>
     </div>
     {:else}
     <div class="header">
@@ -29,6 +29,6 @@
        </div>
     {/if}
   {:catch error}
-  	<p style="color: red">Error:</p>
+  	<p style="color: red">Chyba:</p>
   	<p style="color: red">{error.message}</p>
   {/await}

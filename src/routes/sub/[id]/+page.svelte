@@ -4,9 +4,9 @@
 </script>
 
 <div class="container half-width">
-	<h3>Subscription details - {data.sub.label}</h3>
+	<h3>Informace o odběru - {data.sub.label}</h3>
 	<div class="mb-3">
-		<label for="bakaServer" class="form-label">Bakaláři server address</label>
+		<label for="bakaServer" class="form-label">Adresa serveru Bakaláři</label>
 		<input
 			type="text"
 			class="form-control"
@@ -17,7 +17,7 @@
 		/>
 	</div>
 	<div class="mb-3">
-		<label for="className" class="form-label">Class</label>
+		<label for="className" class="form-label">Třída</label>
 		<input
 			type="text"
 			class="form-control"
@@ -28,7 +28,7 @@
 		/>
 	</div>
 	<div class="mb-3">
-		<label for="groups" class="form-label">Groups</label>
+		<label for="groups" class="form-label">Skupiny</label>
 		<input
 			type="text"
 			class="form-control"
@@ -39,7 +39,7 @@
 		/>
 	</div>
 	<div class="mb-3">
-		<label for="label" class="form-label">Label</label>
+		<label for="label" class="form-label">Štítek</label>
 		<input
 			type="text"
 			class="form-control"
@@ -51,7 +51,7 @@
 	</div>
 	{#if data.sub.pausedUntil > Date.now()}
 		<div class="mb-3">
-			<label for="pausedUntil" class="form-label">Paused until</label>
+			<label for="pausedUntil" class="form-label">Pozastaveno do</label>
 			<input
 				type="text"
 				class="form-control"
@@ -73,12 +73,12 @@
 			disabled
 		/>
 		<label class="form-check-label" for="notificationOnClassStart">
-			Notification on class start
+			Oznámení na začátku hodiny
 		</label>
 	</div>
 	<div class="buttons">
-		<a class="btn btn-primary" href="/sub/{data.sub.id}/edit">Edit subscription</a>
-		<a class="btn btn-outline-danger" href="/sub/{data.sub.id}/delete">Delete subscription</a>
+		<a class="btn btn-primary" href="/sub/{data.sub.id}/edit">Upravit</a>
+		<a class="btn btn-outline-danger" href="/sub/{data.sub.id}/delete">Smazat</a>
 	</div>
 </div>
 

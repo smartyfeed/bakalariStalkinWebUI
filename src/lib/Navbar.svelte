@@ -41,7 +41,7 @@
 					{#if user.error == 'E_BAD_SESSION_TOKEN'}{:else}
 						<li class="nav-item">
 							<a class="nav-link" class:active={$page.url.pathname === '/settings'} href="/settings"
-								>Settings</a
+								>Nastavení</a
 							>
 						</li>
 					{/if}

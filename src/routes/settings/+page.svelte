@@ -4,9 +4,9 @@
 </script>
 
 <div class="container half-width">
-	<h3>Personal defaults</h3>
+	<h3>Výchozí nastavení</h3>
 	<div class="mb-3">
-		<label for="bakaServer" class="form-label">Bakaláři server address</label>
+		<label for="bakaServer" class="form-label">Adresa serveru Bakaláři</label>
 		<input
 			type="text"
 			class="form-control"
@@ -17,7 +17,7 @@
 		/>
 	</div>
 	<div class="mb-3">
-		<label for="className" class="form-label">Your class</label>
+		<label for="className" class="form-label">Třída</label>
 		<input
 			type="text"
 			class="form-control"
@@ -28,7 +28,7 @@
 		/>
 	</div>
 	<div class="mb-3">
-		<label for="groups" class="form-label">Your groups</label>
+		<label for="groups" class="form-label">Skupiny</label>
 		<input
 			type="text"
 			class="form-control"
@@ -38,5 +38,5 @@
 			disabled
 		/>
 	</div>
-	<a class="btn btn-primary" href="/settings/edit">Edit defaults</a>
+	<a class="btn btn-primary" href="/settings/edit">Upravit</a>
 </div>

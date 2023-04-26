@@ -7,15 +7,15 @@
 
 <div class="container half-width">
 	{#if form?.error == 'E_BAD_BAKA_SERVER'}<div class="alert alert-danger" role="alert">
-			Invalid/unsupported server address!
+			Neplatná/nepodporovaná adresa serveru!
 		</div>{/if}
 	{#if form?.error == 'E_BAD_CLASS_NAME'}<div class="alert alert-danger" role="alert">
-			Incorrect class name!
+			Špatný název třídy!
 		</div>{/if}
 	{#if form?.error == 'E_BAD_GROUPS'}<div class="alert alert-danger" role="alert">
-			Invalid groups!
+			Neplatné skupiny!
 		</div>{/if}
-	<h3>Edit defaults</h3>
+	<h3>Upravit výchozí nastavení</h3>
 	<form
 		method="POST"
 		use:enhance={({ form, data, action, cancel, submitter }) => {
@@ -29,7 +29,7 @@
 	>
 		<input type="hidden" id="step" name="step" value={form?.step || 1} />
 		<div class="mb-3">
-			<label for="bakaServer" class="form-label">Bakaláři server address</label>
+			<label for="bakaServer" class="form-label">Adresa serveru Bakaláři</label>
 			<input
 				type="text"
 				class={form?.step > 1 ? 'form-control-plaintext fw-bold' : 'form-control'}
@@ -44,7 +44,7 @@
 		</div>
 		{#if form?.step > 1}
 			<div class="mb-3">
-				<label for="className" class="form-label">Your class</label>
+				<label for="className" class="form-label">Třída</label>
 				<select
 					class={form?.step > 2 ? 'form-control-plaintext fw-bold' : 'form-control'}
 					id="className"
@@ -63,9 +63,9 @@
 		{/if}
 		{#if form?.step > 2}
 			<div class="mb-3">
-				<label for="groups" class="form-label">Your groups</label>
+				<label for="groups" class="form-label">Skupiny</label>
 				<select class="form-select" id="groups" name="groups" multiple>
-					<option value="">None</option>
+					<option value="">Žádné</option>
 					{#each form?.groups as group}
 						<option value={group}>{group}</option>
 					{/each}
@@ -74,15 +74,15 @@
 		{/if}
 
 		{#if form?.step == 1 || !form?.step}
-			<button type="submit" class="btn btn-primary">Continue</button>
+			<button type="submit" class="btn btn-primary">Pokračovat</button>
 		{/if}
 		{#if form?.step == 2}
-			<button id="back" class="btn btn-outline-secondary">Go back</button>
-			<button type="submit" class="btn btn-primary">Continue</button>
+			<button id="back" class="btn btn-outline-secondary">Zpět</button>
+			<button type="submit" class="btn btn-primary">Pokračovat</button>
 		{/if}
 		{#if form?.step == 3}
-			<button id="back" class="btn btn-outline-secondary">Go back</button>
-			<button type="submit" class="btn btn-success">Save</button>
+			<button id="back" class="btn btn-outline-secondary">Zpět</button>
+			<button type="submit" class="btn btn-success">Uložit</button>
 		{/if}
 	</form>
 </div>

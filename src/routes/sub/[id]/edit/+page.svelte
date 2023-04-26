@@ -10,19 +10,19 @@
 
 <div class="container half-width">
 	{#if form?.error == 'E_BAD_BAKA_SERVER'}<div class="alert alert-danger" role="alert">
-			Invalid/unsupported server address!
+			Neplatná/nepodporovaná adresa serveru!
 		</div>{/if}
 	{#if form?.error == 'E_BAD_CLASS_NAME'}<div class="alert alert-danger" role="alert">
-			Incorrect class name!
+			Špatný název třídy!
 		</div>{/if}
 	{#if form?.error == 'E_BAD_GROUPS'}<div class="alert alert-danger" role="alert">
-			Invalid groups!
+			Neplatné skupiny!
 		</div>{/if}
 	{#if data.sub?.id}
-		<h3>Edit subscription - {data.sub?.label}</h3>
+		<h3>Upravit odběr - {data.sub?.label}</h3>
 	{:else}
-		<h3>Create new subscription</h3>
-		<div class="alert alert-dark" role="alert">Your defaults will be pre-filled</div>
+		<h3>Vytvořit nový odběr</h3>
+		<div class="alert alert-dark" role="alert">Vaše výchozí nastavení budou předvyplněna</div>
 	{/if}
 	<form
 		method="POST"
@@ -38,7 +38,7 @@
 		<input type="hidden" id="oldId" name="oldId" value={data.sub?.id || 'new'} />
 		<input type="hidden" id="step" name="step" value={form?.step || 1} />
 		<div class="mb-3">
-			<label for="bakaServer" class="form-label">Bakaláři server address</label>
+			<label for="bakaServer" class="form-label">Adresa serveru Bakaláři</label>
 			<input
 				type="text"
 				class={form?.step > 1 ? 'form-control-plaintext fw-bold' : 'form-control'}
@@ -56,7 +56,7 @@
 		</div>
 		{#if form?.step > 1}
 			<div class="mb-3">
-				<label for="className" class="form-label">Your class</label>
+				<label for="className" class="form-label">Třída</label>
 				<select
 					class={form?.step > 2 ? 'form-control-plaintext fw-bold' : 'form-control form-select'}
 					id="className"
@@ -78,7 +78,7 @@
 		{/if}
 		{#if form?.step > 2}
 			<div class="mb-3">
-				<label for="groups" class="form-label">Groups</label>
+				<label for="groups" class="form-label">Skupiny</label>
 				<select
 					class="form-select"
 					id="groups"
@@ -87,7 +87,7 @@
 					tabindex="-1"
 					style={form?.step > 3 ? 'pointer-events: none;' : ''}
 				>
-					<option value="" selected={data.sub?.groups.length == 0}>None</option>
+					<option value="" selected={data.sub?.groups.length == 0}>Žádné</option>
 					{#each form?.groups as group}
 						<option
 							value={group}
@@ -101,7 +101,7 @@
 		{/if}
 		{#if form?.step > 3}
 			<div class="mb-3">
-				<label for="label" class="form-label">Label</label>
+				<label for="label" class="form-label">Štítek</label>
 				<input
 					type="text"
 					class={form?.step > 4 ? 'form-control-plaintext fw-bold' : 'form-control'}
@@ -123,21 +123,21 @@
 					checked={data.sub?.notificationOnClassStart == 1}
 				/>
 				<label class="form-check-label" for="notificationOnClassStart">
-					Notification on class start
+					Oznámení na začátku hodiny
 				</label>
 			</div>
 		{/if}
 
 		{#if form?.step == 1 || !form?.step}
-			<button type="submit" class="btn btn-primary">Continue</button>
+			<button type="submit" class="btn btn-primary">Pokračovat</button>
 		{/if}
 		{#if form?.step > 1 && form?.step < 4}
-			<button id="back" class="btn btn-outline-secondary">Go back</button>
-			<button type="submit" class="btn btn-primary">Continue</button>
+			<button id="back" class="btn btn-outline-secondary">Zpět</button>
+			<button type="submit" class="btn btn-primary">Pokračovat</button>
 		{/if}
 		{#if form?.step == 4}
-			<button id="back" class="btn btn-outline-secondary">Go back</button>
-			<button type="submit" class="btn btn-success">Save</button>
+			<button id="back" class="btn btn-outline-secondary">Zpět</button>
+			<button type="submit" class="btn btn-success">Uložit</button>
 		{/if}
 	</form>
 </div>
