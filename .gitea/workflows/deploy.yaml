@@ -9,7 +9,7 @@ jobs:
       SSH_USER: ${{ secrets.SSH_USER }}
       SSH_HOST: ${{ secrets.SSH_HOST }}
     steps:
-      - run: "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
+      - run: 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
       - run: eval $(ssh-agent -s)
       - run: mkdir -p ~/.ssh
       - run: chmod 700 ~/.ssh
