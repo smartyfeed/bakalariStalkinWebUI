@@ -37,7 +37,7 @@
           </a>
       {:else}
         <div class="container-fluid">
-          <img src="https://cdn.discordapp.com/avatars/{user.id}/{user.avatar}.png?size=256" style="border-radius: 50%; height: 2.3em; padding-right: 0.5em;" alt="{user.username}'s avatar">
+          <img src="https://cdn.discordapp.com/avatars/{user.id}/{user.avatar}.png?size=256" style="border-radius: 50%; height: 2.3em; margin-right: 0.5em;" alt="{user.username}'s avatar">
           {user.username} 
           <a href="{apiBase}/logout" class="btn btn-secondary" style="margin-bottom: 0.1em; margin-left: 1.5em" data-sveltekit-reload>Odhlásit se</a>
         </div>
