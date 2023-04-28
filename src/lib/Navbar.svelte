@@ -6,16 +6,16 @@
 </script>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <img
-        src="https://cdn.discordapp.com/avatars/891012315128942644/cd50ffd6c2b8a07881f63ccdbbcd9742.webp?size=512"
-        alt=""
-        width="50px"
-        height="50px"
-      />
-    </a>
-    <button
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">
+			<img
+				src="https://cdn.discordapp.com/avatars/891012315128942644/cd50ffd6c2b8a07881f63ccdbbcd9742.webp?size=512"
+				alt=""
+				width="50px"
+				height="50px"
+			/>
+		</a>
+		<button
 			class="navbar-toggler"
 			type="button"
 			data-bs-toggle="collapse"
@@ -44,6 +44,13 @@
 								>Nastavení</a
 							>
 						</li>
+						{#if user.isAdmin}
+							<li class="nav-item">
+								<a class="nav-link" class:active={$page.url.pathname === '/admin'} href="/admin"
+									>Admin panel</a
+								>
+							</li>
+						{/if}
 					{/if}
 				{/await}
 				<li class="nav-item user">
