@@ -4,13 +4,11 @@
 </script>
 
 <div class="container">
-	<h3>Aktivní odběry</h3>
-	<table class="table table-hover table-bordered">
-		<thead>
-			<tr>
-				<th scope="col">Stalker</th>
-			</tr>
-		</thead>
+	<div class="flex-thing">
+		<h3>Aktivní odběry</h3>
+		<button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false">Toggle all subs</button>
+	</div>
+	<table class="table table-hover table-bordered mt-3">
 		<tbody>
 			{#each Object.entries(data.stalkers) as [id, stuff]}
 				<tr>
@@ -55,5 +53,11 @@
 <style>
 	.row {
 		margin: 0 !important;
+	}
+
+	.flex-thing {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 </style>
