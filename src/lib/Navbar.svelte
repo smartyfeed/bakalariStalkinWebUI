@@ -11,8 +11,8 @@
 			<img
 				src="https://cdn.discordapp.com/avatars/891012315128942644/cd50ffd6c2b8a07881f63ccdbbcd9742.webp?size=512"
 				alt=""
-				width="50px"
-				height="50px"
+				width="70px"
+				height="70px"
 			/>
 		</a>
 		<button
@@ -80,4 +80,36 @@
 			position: absolute !important;
 		}
 	}
+
+	/* Element | https://bakalari.smartyfeed.me/ */
+
+.navbar {
+  padding: 0;
+}
+
+/* Element | https://bakalari.smartyfeed.me/ */
+
+.navbar > div:nth-child(1) {
+  padding-left: 0;
+}
+
+/* Element | https://bakalari.smartyfeed.me/ */
+
+.navbar-brand {
+  padding: 0;
+}
+
+/* Element | https://bakalari.smartyfeed.me/ */
+
+#navbarSupportedContent {
+  /* height: 217px; */
+  padding-left: 1em;
+}
+
+/* Element | https://bakalari.smartyfeed.me/ */
+
+li.nav-item:nth-child(5) {
+  margin-top: 0;
+}
+
 </style>
