@@ -1,7 +1,9 @@
 <img src="https://smartyfeed.me/~server/bakalariStalkin_webui_white.svg" width="30%">
 
-Dashboard for [`bakalariStalkinBot`](https://git.smartyfeed.me/WIPocket/bakalariStalkinBot), powered by [`SvelteKit`](https://kit.svelte.dev/)
+Dashboard for [`bakalariStalkinBot`](https://git.smartyfeed.me/WIPocket/bakalariStalkinBot), powered by [`SvelteKit`](https://kit.svelte.dev/)  
+Hosted on [https://bakalari.smartyfeed.me/](https://bakalari.smartyfeed.me/)
 
+#
 ## Features
 - Subscription management
 - Absence viewer (external service)
