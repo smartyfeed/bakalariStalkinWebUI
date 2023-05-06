@@ -24,7 +24,40 @@
 					</div>
 				</div>
 				<span class="list-group-item fw-bold">Environment:</span>
-				<div class="list-group">
+				<div class="list-group env-stats env-stats-desktop">
+					<div class="list-group-item env-row titles"><span>Bot:</span><span>WebUI:</span></div>
+					<div class="list-group">
+						<div class="list-group-item env-row">
+							<span>Node: <span class="fw-bold">{data.stats.env.node}</span></span><span
+								>Node: <span class="fw-bold">{data.UIstats.node}</span></span
+							>
+						</div>
+						<div class="list-group-item env-row">
+							<span>Commit: <span class="fw-bold">{data.stats.env.commit}</span></span><span
+								>Commit: <span class="fw-bold">{data.UIstats.commit}</span></span
+							>
+						</div>
+						<div class="list-group-item env-row">
+							<span>Uptime: <span class="fw-bold">{data.stats.env.uptime}</span></span><span
+								>Uptime: <span class="fw-bold">{data.UIstats.uptime}</span></span
+							>
+						</div>
+					</div>
+				</div>
+				<span class="list-group-item env-stats-mobile">Bot:</span>
+				<div class="list-group env-stats-mobile">
+					<span class="list-group-item"
+						>Node: <span class="fw-bold">{data.stats.env.node}</span></span
+					>
+					<span class="list-group-item"
+						>Commit: <span class="fw-bold">{data.stats.env.commit}</span></span
+					>
+					<span class="list-group-item"
+						>Uptime: <span class="fw-bold">{data.stats.env.uptime}</span></span
+					>
+				</div>
+				<span class="list-group-item env-stats-mobile">WebUI:</span>
+				<div class="list-group env-stats-mobile">
 					<span class="list-group-item"
 						>Node: <span class="fw-bold">{data.stats.env.node}</span></span
 					>
@@ -138,26 +171,50 @@
 		align-items: center;
 	}
 
-	
 	.stats-wrap {
 		display: flex;
 		flex-direction: row;
 		gap: 2em;
 		padding: 0 0 1em 0;
 	}
-	
-	.stats-wrap>* {
+
+	.stats-wrap > * {
 		flex: 1;
+		height: fit-content;
 	}
 
 	.stats {
 		margin: 0 0 1em 0;
 	}
-	
+
+	.env-row {
+		display: flex;
+	}
+
+	.env-row > * {
+		flex: 1;
+	}
+
+	.env-row:not(.titles) > *:nth-child(2n) {
+		margin-left: 2em;
+	}
+
+	.env-stats-mobile {
+		display: none;
+	}
+
 	@media screen and (max-width: 600px) {
 		.stats-wrap {
 			flex-direction: column;
 			gap: 1em;
+		}
+
+		.env-stats-desktop {
+			display: none;
+		}
+
+		.env-stats-mobile {
+			display: block;
 		}
 	}
 	.list-group.list-group-root {

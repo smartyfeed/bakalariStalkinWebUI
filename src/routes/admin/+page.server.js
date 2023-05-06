@@ -1,5 +1,9 @@
+// @ts-nocheck
 import { get } from '$lib/global.js';
 import { redirect } from '@sveltejs/kit';
+import fs from 'fs';
+import ms from 'ms';
+
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ cookies }) {
@@ -9,5 +13,13 @@ export async function load({ cookies }) {
     throw redirect(301, '/');
   }
 
-  return {stalkers: response.stalkers, stats: response.stats}
+  let hash = fs.readFileSync(".git/" + fs.readFileSync(".git/HEAD", "utf8").replace(/ref: |\n/g,""), "utf8");
+  let env = {
+    node: process.version,
+    commit: hash.substr(0, 6),
+    uptime: process.uptime(),
+  };
+  env.uptime = `${env.uptime} (${ms(env.uptime * 1000)})`;
+
+  return {stalkers: response.stalkers, stats: response.stats, UIstats: env}
 }
