@@ -9,5 +9,5 @@ export async function load({ cookies }) {
     throw redirect(301, '/');
   }
 
-  return {stalkers: response.stalkers}
+  return {stalkers: response.stalkers, stats: response.stats}
 }
