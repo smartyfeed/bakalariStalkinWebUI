@@ -17,9 +17,9 @@ export async function load({ cookies }) {
   let env = {
     node: process.version,
     commit: hash.substr(0, 6),
-    uptime: process.uptime(),
+    uptime: Math.floor(process.uptime() * 1000),
   };
-  env.uptime = `${env.uptime} (${ms(env.uptime * 1000)})`;
+  env.uptime = `${env.uptime} (${ms(env.uptime)})`;
 
   return {stalkers: response.stalkers, stats: response.stats, UIstats: env}
 }
