@@ -38,7 +38,7 @@
 							>
 							<td label="Na začátku hodiny">{sub.notificationOnClassStart == 1 ? 'Ano' : 'Ne'}</td>
 							<td label="Akce" class="actions">
-								<div class="actions">
+								<div class="actions action-buttons">
 									<a href="/sub/{sub.id}" class="btn btn-primary">Upravit</a>
 									<a href="/pause/{sub.id}" class="btn btn-outline-warning"
 										>{sub.pausedUntil > Date.now() ? 'Prodloužit' : 'Pozastavit'}</a
@@ -100,8 +100,15 @@
 			margin: 0;
 		}
 
-		.actions a:first-child {
+		.actions a {
 			margin-left: -0.5em;
+		}
+
+		.action-buttons {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75em;
+			width: 100%;
 		}
 	}
 </style>
