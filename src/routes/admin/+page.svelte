@@ -138,6 +138,7 @@
 										<th scope="col" class="col">Class</th>
 										<th scope="col" class="col">Groups</th>
 										<th scope="col" class="col">On class start</th>
+										<th scope="col" class="col">Paused</th>
 									</tr>
 								</thead>
 								<tbody class="container-fluid">
@@ -148,6 +149,9 @@
 											<td class="col">{sub.className}</td>
 											<td class="col">{sub.groups.join(', ')}</td>
 											<td class="col">{sub.notificationOnClassStart == 1 ? 'Yes' : 'No'}</td>
+											<td class="col">{sub.pausedUntil > Date.now()
+												? new Date(sub.pausedUntil).toLocaleString()
+												: 'No'}</td>
 										</tr>
 									{/each}
 								</tbody>
