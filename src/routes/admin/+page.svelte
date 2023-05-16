@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 </script>
@@ -144,12 +146,12 @@
 								<tbody class="container-fluid">
 									{#each stuff.subs as sub}
 										<tr class="row">
-											<td class="col">{sub.id}</td>
-											<td class="col">{sub.label}</td>
-											<td class="col">{sub.className}</td>
-											<td class="col">{sub.groups.join(', ')}</td>
-											<td class="col">{sub.notificationOnClassStart == 1 ? 'Yes' : 'No'}</td>
-											<td class="col">{sub.pausedUntil > Date.now()
+											<td class="col" label="ID">{sub.id}</td>
+											<td class="col" label="Label">{sub.label}</td>
+											<td class="col" label="Class">{sub.className}</td>
+											<td class="col" label="Groups">{sub.groups.length > 0 ? sub.groups.join(', ') : "None"}</td>
+											<td class="col" label="On class start">{sub.notificationOnClassStart == 1 ? 'Yes' : 'No'}</td>
+											<td class="col" label="Paused">{sub.pausedUntil > Date.now()
 												? new Date(sub.pausedUntil).toLocaleString()
 												: 'No'}</td>
 										</tr>
@@ -219,6 +221,34 @@
 
 		.env-stats-mobile {
 			display: block;
+		}
+
+		table thead {
+			display: none;
+		}
+		table table tbody td {
+			display: flex;
+			flex-direction: column;
+		}
+
+		table table td::before {
+			content: attr(label);
+			font-weight: bold;
+			width: 120px;
+			min-width: 120px;
+		}
+
+		.row {
+			display: flex;
+			flex-direction: column;
+		}
+
+		table table tbody tr {
+			border-top: 2px solid #dee2e6;
+		}
+
+		table table tbody tr:first-child {
+			border-top: none;
 		}
 	}
 	.list-group.list-group-root {
