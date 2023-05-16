@@ -61,13 +61,13 @@
 				<span class="list-group-item env-stats-mobile">WebUI:</span>
 				<div class="list-group env-stats-mobile">
 					<span class="list-group-item"
-						>Node: <span class="fw-bold">{data.stats.env.node}</span></span
+						>Node: <span class="fw-bold">{data.UIstats.node}</span></span
 					>
 					<span class="list-group-item"
-						>Commit: <span class="fw-bold">{data.stats.env.commit}</span></span
+						>Commit: <span class="fw-bold">{data.UIstats.commit}</span></span
 					>
 					<span class="list-group-item"
-						>Uptime: <span class="fw-bold">{data.stats.env.uptime}</span></span
+						>Uptime: <span class="fw-bold">{data.UIstats.uptime}</span></span
 					>
 				</div>
 			</div>
