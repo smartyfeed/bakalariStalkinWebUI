@@ -12,6 +12,9 @@
 		{#if list.length == 0}
 			<h3>Aktivní odběry</h3>
 			Nemáte žádné odběry!
+			<div class="lower-nav">
+				<a href="sub/new/" class="btn btn-primary">Přidat nový odběr</a>
+			</div>
 		{:else}
 			<h3>Aktivní odběry</h3>
 			<table class="table table-striped table-hover table-bordered border-light-subtle">
@@ -79,6 +82,7 @@
 	.lower-nav {
 		display: flex;
 		gap: 0.5em;
+		margin-top: 1em;
 	}
 
 	@media screen and (max-width: 600px) {
