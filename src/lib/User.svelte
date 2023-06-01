@@ -16,7 +16,7 @@
 				</a>
 			</div>
       <div>
-				<a rel="external" href="{apiBase}/auth" class="btn btn-matrix">
+				<a rel="external" href="https://matrix.to/#/@luk_mom_i_have_a_stalker:smartyfeed.me" class="btn btn-matrix">
 					<img src="/matrix-logo.svg" alt="">
 					<div class="sign-in-text">Log in with Matrix</div>
 				</a>
