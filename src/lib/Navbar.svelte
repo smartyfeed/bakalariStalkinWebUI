@@ -81,32 +81,21 @@
 		}
 	}
 
-	/* Element | https://bakalari.smartyfeed.me/ */
-
 .navbar {
   padding: 0;
 }
-
-/* Element | https://bakalari.smartyfeed.me/ */
 
 .navbar > div:nth-child(1) {
   padding-left: 0;
 }
 
-/* Element | https://bakalari.smartyfeed.me/ */
-
 .navbar-brand {
   padding: 0;
 }
-
-/* Element | https://bakalari.smartyfeed.me/ */
-
 #navbarSupportedContent {
   /* height: 217px; */
   padding-left: 1em;
 }
-
-/* Element | https://bakalari.smartyfeed.me/ */
 
 li.nav-item:nth-child(5) {
   margin-top: 0;
