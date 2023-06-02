@@ -104,5 +104,12 @@
 		.login-btns {
 			flex-direction: column;
 		}
+
+		.btn-discord {
+			gap: 0.5em;
+		}
+		.btn-matrix {
+			gap: 0.5em;
+		}
 	}
 </style>
