@@ -96,6 +96,10 @@
 		gap: 1em;
 	}
 
+	.sign-in-text {
+		white-space: nowrap;
+	}
+
 	@media (max-width: 1199.98px) {
 		.login-btns > div {
 			margin-left: 0.5em;
