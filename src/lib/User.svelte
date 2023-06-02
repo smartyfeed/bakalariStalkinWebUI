@@ -62,7 +62,7 @@
 		background-color: var(--blurple);
 		color: #fff;
 		display: flex;
-		gap: 1em;
+		justify-content: space-between;
     align-items: center;
 		max-width: 13.5rem;
 		height: 2.5em;
@@ -80,7 +80,7 @@
 		background-color: #fff;
 		color: #000;
 		display: flex;
-		gap: 1em;
+		justify-content: space-between;
 		max-width: 15.5rem;
 		height: 2.5em;
 	}
