@@ -29,7 +29,7 @@
 					data-size="large"
 					data-userpic="false"
 					data-radius="6"
-					data-auth-url="https://bakalaritest.smartyfeed.me/api/telegramAuth"
+					data-auth-url="https://bakalari.smartyfeed.me/api/telegramAuth"
 					data-request-access="write"
 				></script>
 			</div>
