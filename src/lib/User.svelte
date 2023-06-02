@@ -81,7 +81,7 @@
 		color: #000;
 		display: flex;
 		gap: 1em;
-		max-width: 15.3rem;
+		max-width: 15.5rem;
 		height: 2.5em;
 	}
 
