@@ -65,7 +65,8 @@
 		justify-content: space-between;
     align-items: center;
 		max-width: 13.5rem;
-		height: 2.5em;
+		height: 2.55em;
+		gap: 0.5em;
 	}
 
 	.btn-discord:hover {
