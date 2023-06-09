@@ -126,7 +126,7 @@
 							data-bs-target="#{id}"
 							aria-expanded="false"><i class="bi bi-eye" /></button
 						>
-						{stuff.user.tag}
+						{stuff.user.username}
 					</td>
 				</tr>
 				<tr>
