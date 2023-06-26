@@ -9,46 +9,8 @@
 	onMount(async () => {
 		new TempusDominus(document.getElementById('until'), {
 			localization: {
-				today: 'Go to today',
-				clear: 'Clear selection',
-				close: 'Close the picker',
-				selectMonth: 'Select Month',
-				previousMonth: 'Previous Month',
-				nextMonth: 'Next Month',
-				selectYear: 'Select Year',
-				previousYear: 'Previous Year',
-				nextYear: 'Next Year',
-				selectDecade: 'Select Decade',
-				previousDecade: 'Previous Decade',
-				nextDecade: 'Next Decade',
-				previousCentury: 'Previous Century',
-				nextCentury: 'Next Century',
-				pickHour: 'Pick Hour',
-				incrementHour: 'Increment Hour',
-				decrementHour: 'Decrement Hour',
-				pickMinute: 'Pick Minute',
-				incrementMinute: 'Increment Minute',
-				decrementMinute: 'Decrement Minute',
-				pickSecond: 'Pick Second',
-				incrementSecond: 'Increment Second',
-				decrementSecond: 'Decrement Second',
-				toggleMeridiem: 'Toggle Meridiem',
-				selectTime: 'Select Time',
-				selectDate: 'Select Date',
-				dayViewHeaderFormat: { month: 'long', year: '2-digit' },
-				locale: 'default',
-				startOfTheWeek: 0,
-				hourCycle: undefined,
-				dateFormats: {
-					LTS: 'h:mm:ss T',
-					LT: 'h:mm T',
-					L: 'MM/dd/yyyy',
-					LL: 'MMMM d, yyyy',
-					LLL: 'MMMM d, yyyy h:mm T',
-					LLLL: 'dddd, MMMM d, yyyy h:mm T'
-				},
-				ordinal: (n) => n,
-				format: 'L'
+				locale: 'en-GB',
+				format: 'dd/MM/yyyy HH:mm'
 			},
 			display: {
 				icons: {
