@@ -60,10 +60,10 @@
 				<a href="sub/new/" class="btn btn-primary">Přidat nový odběr</a>
 
 				{#if list.length > 1}
-					<a href="pause/all" class="btn btn-outline-warning" data-sveltekit-reload>Pozastavit vše</a>
+					<a href="pause/all" class="btn btn-outline-warning">Pozastavit vše</a>
 				{/if}
 				{#if list.filter((sub) => sub.pausedUntil > Date.now()).length > 1}
-					<a href="unpause/all" class="btn btn-outline-secondary">Obnovit vše</a>
+					<a href="unpause/all" class="btn btn-outline-secondary" data-sveltekit-reload>Obnovit vše</a>
 				{/if}
 			</div>
 		{/if}
