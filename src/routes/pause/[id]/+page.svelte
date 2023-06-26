@@ -10,7 +10,7 @@
 		new TempusDominus(document.getElementById('until'), {
 			localization: {
 				locale: 'en-GB',
-				format: 'dd/MM/yyyy HH:mm'
+				format: 'dd/MM/yyyy h:mm T'
 			},
 			display: {
 				icons: {
