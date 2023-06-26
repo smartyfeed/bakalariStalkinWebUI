@@ -8,5 +8,4 @@ export async function load({ cookies, params }) {
 		console.log(body);
 		await post(`/pauseSub`, body, { token: cookies.get('token') }, false);
 	}
-  throw redirect(301, '/');
 }

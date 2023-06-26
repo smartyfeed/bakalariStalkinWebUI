@@ -47,7 +47,7 @@
 										>{sub.pausedUntil > Date.now() ? 'Prodloužit' : 'Pozastavit'}</a
 									>
 									{#if sub.pausedUntil > Date.now()}
-										<a href="/unpause/{sub.id}" class="btn btn-outline-secondary" data-sveltekit-reload>Obnovit</a>
+										<a href="unpause/{sub.id}" class="btn btn-outline-secondary">Obnovit</a>
 									{/if}
 								</div>
 							</td>
