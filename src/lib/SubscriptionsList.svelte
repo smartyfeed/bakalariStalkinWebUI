@@ -47,8 +47,7 @@
 										>{sub.pausedUntil > Date.now() ? 'Prodloužit' : 'Pozastavit'}</a
 									>
 									{#if sub.pausedUntil > Date.now()}
-										<a href="unpause/{sub.id}" class="btn btn-outline-secondary">Obnovit</a>
-										<!-- data-sveltekit-reload -->
+										<a href="unpause/{sub.id}" class="btn btn-outline-secondary" data-sveltekit-reload>Obnovit</a>
 									{/if}
 								</div>
 							</td>
@@ -61,7 +60,7 @@
 				<a href="sub/new/" class="btn btn-primary">Přidat nový odběr</a>
 
 				{#if list.length > 1}
-					<a href="pause/all" class="btn btn-outline-warning">Pozastavit vše</a>
+					<a href="pause/all" class="btn btn-outline-warning" data-sveltekit-reload>Pozastavit vše</a>
 				{/if}
 				{#if list.filter((sub) => sub.pausedUntil > Date.now()).length > 1}
 					<a href="unpause/all" class="btn btn-outline-secondary">Obnovit vše</a>
